@@ -1,3 +1,4 @@
+import HomeRoute from './Routes/HomeRoute.js';
 import express from 'express';
 
 export class Server {
@@ -19,6 +20,7 @@ export class Server {
 	}
 
 	setUpRoutes() {
+		this.app.get('/', HomeRoute.onGet);
 	}
 }
 
