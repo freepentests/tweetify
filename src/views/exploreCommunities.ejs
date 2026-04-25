@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<title>Tweetify - Explore Communities</title>
-		<link rel="stylesheet" href="/static/Styles/CommunityExplore.css">
-		<script src="/static/Scripts/CommunityExplore.js" type="module"></script>
+		<link rel="stylesheet" href="/static/Styles/ExploreCommunities.css">
+		<script src="/static/Scripts/ExploreCommunities/index.js" type="module"></script>
 	</head>
 	<body>
 		<div class="main">
@@ -11,8 +11,10 @@
 			<p>Explore and discover chat groups. Use our search feature to find new communities instantly.</p>
 			<div class="search">
 				<input type="text" class="query" placeholder="Search Query...">
-				<button>Search</button>
+				<button class="searchButton">Search</button>
 				<div class="searchRecommendations"></div>
+				<h2 class="message"></h2>
+				<div class="searchResults"></div>
 			</div>
 		</div>
 	</body>

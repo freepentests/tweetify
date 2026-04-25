@@ -14,6 +14,10 @@ body {
 	font-family: 'Arial', sans-serif;
 }
 
+.joinButton {
+	cursor: pointer;
+}
+
 .search {
 	position: absolute;
 	left: 50%;
@@ -32,6 +36,15 @@ body {
 .searchRecommendations div {
 	padding: 10px;
 	border: 2px solid var(--crimson);
+}
+
+.searchResults div {
+	background: var(--blood-red-2);
+	border: 5px solid var(--crimson);
+	display: inline-block;
+	margin: 25px;
+	padding: 25px;
+	width: 250px;
 }
 
 .searchRecommendations div:hover {
