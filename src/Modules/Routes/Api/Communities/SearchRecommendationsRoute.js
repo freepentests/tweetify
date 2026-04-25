@@ -3,14 +3,12 @@ import Helpers from './Helpers.js';
 
 export default class SearchCommunitiesRoute {
 	static searchCommunities(query) {
-		if ([...query].length <= 3 || [...query].length > 35) throw new Error('Your query must be more than 3 characters in length and less than 35 characters in length.');
+		if ([...query].length <= 3 || [...query].length > 35) return []
 
 		const matchingCommunities = Helpers.findCommunitiesMatchingQuery(query);
+		const matchingCommunityNames = matchingCommunities.map((community) => community.name);
 
-		return {
-			results: matchingCommunities,
-			numResults: matchingCommunities.length
-		};
+		return matchingCommunityNames.slice(0, 10);
 	}
 
 	static onGet(req, res) {
