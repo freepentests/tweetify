@@ -1,0 +1,73 @@
+:root {
+	--dark-red: #440000;
+	--blood-red-2: #660000;
+	--blood-red: #8B0000;
+	--maroon: #800000;
+	--blood-orange: #CC1100;
+	--crimson: #DC143C;
+	--white: #FFFFFF;
+}
+
+body {
+	background: linear-gradient(180deg, var(--blood-red-2) 0%, var(--maroon) 65%, var(--crimson) 100%); /* got this from https://cssgradient.io/, some people would say it's skidding, but I would disagree */
+	color: var(--crimson);
+	font-family: 'Arial', sans-serif;
+}
+
+.search {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.searchRecommendations {
+	background: var(--dark-red);
+	font-weight: 900;
+	width: 300px;
+	position: absolute;
+	left: 0%;
+	/*transform: translateX(-50%);*/
+}
+
+.searchRecommendations div {
+	padding: 10px;
+	border: 2px solid var(--crimson);
+}
+
+.searchRecommendations div:hover {
+	background: var(--blood-red);
+}
+
+button, input[type="text"] {
+	background: var(--dark-red);
+	color: var(--crimson);
+	font-size: 20px;
+	padding: 20px;
+	font-weight: 900;
+	border-radius: 50px;
+	border: none;
+}
+
+input[type="text"] {
+	border-radius: 0;
+	padding-right: 0;
+	padding-left: 0;
+	width: 300px;
+	text-align: center;
+}
+
+.main {
+	text-align: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.main h1 {
+	font-size: 70px;
+}
+
+.main p {
+	font-size: 20px;
+	font-weight: 900;
+}
+

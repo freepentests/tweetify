@@ -16,7 +16,7 @@ export default class SearchCommunitiesRoute {
 
 		const apiResponse = new ApiResponseBuilder();
 
-		if (!query) {
+		if (query === undefined) {
 			apiResponse.setSuccess(false).setResponse('Not enough arguments provided to satisfy this request.');
 			return res.status(400).json(apiResponse);
 		}
