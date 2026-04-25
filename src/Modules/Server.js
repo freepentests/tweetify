@@ -3,6 +3,9 @@ import ApiRouter from './Routes/Api/Router.js';
 import HomeRoute from './Routes/HomeRoute.js';
 
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 export class Server {
 	static instance;
