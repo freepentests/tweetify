@@ -1,3 +1,4 @@
+import CommunitiesRouter from './Routes/Communities/Router.js';
 import HomeRoute from './Routes/HomeRoute.js';
 
 import express from 'express';
@@ -24,9 +25,12 @@ export class Server {
 	}
 
 	setUpMiddleware() {
+		const communitiesRouter = new CommunitiesRouter();
+
 		this.app.set('view engine', 'ejs');
 
 		this.app.use('/static', express.static('public'));
+		this.app.use('/communities', communitiesRouter.router);
 	}
 
 	setUpRoutes() {
