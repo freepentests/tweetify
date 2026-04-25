@@ -1,4 +1,5 @@
 import CommunitiesRouter from './Routes/Communities/Router.js';
+import ApiRouter from './Routes/Api/Router.js';
 import HomeRoute from './Routes/HomeRoute.js';
 
 import express from 'express';
@@ -26,11 +27,13 @@ export class Server {
 
 	setUpMiddleware() {
 		const communitiesRouter = new CommunitiesRouter();
+		const apiRouter = new ApiRouter();
 
 		this.app.set('view engine', 'ejs');
 
 		this.app.use('/static', express.static('public'));
 		this.app.use('/communities', communitiesRouter.router);
+		this.app.use('/api', apiRouter.router);
 	}
 
 	setUpRoutes() {
