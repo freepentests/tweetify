@@ -1,3 +1,4 @@
+import JwtPayloadBuilder from '../../../Builders/JwtPayload.js';
 import ApiResponseBuilder from '../../../Builders/ApiResponse.js';
 import Helpers from './Helpers.js';
 
@@ -9,9 +10,14 @@ export default class LoginRoute {
 		const credentialsValid = await Helpers.validateCredentials({ username, password });
 		if (!credentialsValid) throw new Error('Username or password is incorrect.');
 
+		const jwtPayload = new JwtPayloadBuilder()
+			.setAuthenticated(true)
+			.setUsername(username)
+			.serialize();
+
 		return {
 			message: 'Successfully logged in.',
-			jwt: jwt.sign({ username }, process.env.JWT_SIGNING_KEY)
+			jwt: jwt.sign(jwtPayload, process.env.JWT_SIGNING_KEY)
 		};
 	}
 

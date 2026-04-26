@@ -1,4 +1,5 @@
 import ExploreRoute from './ExploreRoute.js';
+import CreateRoute from './CreateRoute.js';
 
 import express from 'express';
 
@@ -9,8 +10,8 @@ export default class CommunitiesRouter {
 	}
 
 	setUpRoutes() {
-		this.router.get('/', ExploreRoute.onGet.bind(this));
 		this.router.get('/explore', ExploreRoute.onGet.bind(this));
+		this.router.get('/create', CreateRoute.onGet.bind(this));
 	}
 }
 

@@ -5,6 +5,7 @@ export default class CommunityBuilder {
 		this.inviteCode = null;
 		this.isPublic = null;
 		this.memberCount = null;
+		this.ownerUsername = null;
 	}
 
 	setName(name) {
@@ -29,6 +30,11 @@ export default class CommunityBuilder {
 
 	setMemberCount(memberCount) {
 		this.memberCount = memberCount;
+		return this;
+	}
+
+	setOwnerUsername(ownerUsername) {
+		this.ownerUsername = ownerUsername;
 		return this;
 	}
 }
